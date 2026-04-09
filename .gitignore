@@ -1,0 +1,28 @@
+# Environment variables - NEVER commit these
+.env
+.env.local
+.env*.local
+
+# Node modules
+node_modules/
+blockchain/node_modules/
+frontend/node_modules/
+
+# Hardhat build artifacts
+blockchain/artifacts/
+blockchain/cache/
+blockchain/ignition/deployments/
+
+# Next.js build output
+frontend/.next/
+frontend/out/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Deployment logs
+*.log
