@@ -39,6 +39,13 @@ export default function Navbar() {
           >
             Track Product
           </Link>
+          <Link
+              href="/transfer"
+              className="text-gray-400 hover:text-white text-sm 
+              transition-colors duration-200"
+            >
+            Transfer
+          </Link>
         </div>
 
         {/* Wallet Button */}
