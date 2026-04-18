@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import {
@@ -73,7 +73,7 @@ function StatusPill({ eventType }) {
   );
 }
 
-export default function TrackProduct() {
+function TrackProduct() {
   const searchParams = useSearchParams();
   const initialId = searchParams.get("id") || "";
 
@@ -460,5 +460,23 @@ useEffect(() => {
       )}
 
     </div>
+  );
+}
+
+export default function TrackPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="flex items-center justify-center min-h-[60vh]">
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-10 h-10 border-2 border-blue-400 
+                            border-t-transparent rounded-full animate-spin" />
+            <p className="text-gray-400">Loading tracker...</p>
+          </div>
+        </div>
+      }
+    >
+      <TrackProduct />
+    </Suspense>
   );
 }
